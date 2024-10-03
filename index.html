@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Swiper demo</title>
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1"
+    />
+    <!-- Link Swiper's CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
+
+    <style>
+      html,
+      body {
+        position: relative;
+        height: 100%;
+      }
+
+      body {
+        background: #eee;
+        font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+        font-size: 14px;
+        color: #000;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .title {
+        margin: 50px 0 30px -12rem;
+        font-weight: 700;
+        display: block;
+      }
+      .content {
+        clear: both;
+        font-size: 18px;
+      }
+      .highlight {
+        color: #762dfd;
+      }
+      .line {
+        width: 20%;
+        color: #762dfd;
+        float: left;
+      }
+
+      .swiper {
+        width: 100%;
+        height: 40%;
+        display: flex;
+        flex-direction: column;
+        gap: 0px;
+      }
+
+      .swiper-slide {
+        text-align: center;
+        font-size: 18px;
+        background: #fff;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        width: 350px !important;
+        height: 200px;
+        background: linear-gradient(
+          to bottom,
+          rgba(80, 37, 136, 0.7),
+          rgba(0, 0, 0, 0.7)
+        );
+        background-size: cover;
+        background-position: center;
+        border-radius: 10px;
+        color: white;
+        padding: 15px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      }
+
+      .swiper-slide img {
+        display: block;
+        width: 100%;
+        height: 50%;
+        object-fit: cover;
+      }
+      .swiper-pagination {
+        position: relative;
+        bottom: -30px;
+        display: flex;
+        justify-content: center;
+        width: 100%;
+        left: 10% !important;
+      }
+
+      .swiper-pagination-bullet {
+        width: 100px;
+        height: 2px;
+        border-radius: 0px;
+        background-color: #959595;
+        opacity: 0.5;
+        margin: 0 5px;
+      }
+
+      .swiper-pagination-bullet-active {
+        opacity: 1;
+        position: relative;
+        background: #000;
+        height: 1px;
+      }
+
+      .swiper-pagination-bullet-active::before {
+        content: "";
+        position: absolute;
+        left: -5px;
+        right: -5px;
+        bottom: -4px;
+        border: 3px solid #762dfd;
+      }
+
+      .webinar-title {
+        position: absolute;
+        bottom: 15px;
+        left: 15px;
+        font-size: 16px;
+        font-weight: bold;
+        line-height: 1.2em;
+        max-width: 270px;
+      }
+      
+      @media screen and (max-width: 768px) {
+        .swiper-pagination {
+            display: none;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="title">
+      <hr class="line" />
+      <div class="content">
+        Featured <span class="highlight">Resources</span>
+      </div>
+    </div>
+
+    <div class="swiper mySwiper">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide">
+          <div class="webinar-title">
+            Online and Offline Advertising Attribution
+          </div>
+        </div>
+        <div class="swiper-slide">
+          <div class="webinar-title">
+            Top Three Consumer Behavior Data Use Cases...
+          </div>
+        </div>
+        <div class="swiper-slide">
+          <div class="webinar-title">
+            Marketing Agencies: Using Consumer Behavior Data ...
+          </div>
+        </div>
+        <div class="swiper-slide">
+          <div class="webinar-title">
+            How a DMO Used Predictive Data Lab and Azira to...
+          </div>
+        </div>
+        <div class="swiper-slide">
+          <div class="webinar-title">Agencies: Using</div>
+        </div>
+        <div class="swiper-slide">
+          <div class="webinar-title">Consumer Behavior</div>
+        </div>
+        <div class="swiper-slide">
+          <div class="webinar-title">Used Predictive</div>
+        </div>
+        <div class="swiper-slide">
+          <div class="webinar-title">Data Lab and Azira</div>
+        </div>
+      </div>
+      <div class="swiper-pagination"></div>
+    </div>
+
+    <!-- Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+    
+     
+    <script>
+      var swiper = new Swiper(".mySwiper", {
+        slidesPerView: "auto", 
+        spaceBetween: 15, 
+        slidesPerGroup: 1, 
+        centeredSlides: false, 
+        pagination: {
+          el: ".swiper-pagination",
+          clickable: false, 
+        },
+        breakpoints: {
+          768: {
+            slidesPerView: 4,
+            spaceBetween: 30,
+            centeredSlides: true,
+            slidesPerGroup: 2,
+            pagination: {
+              el: ".swiper-pagination",
+              clickable: true,
+            },
+          },
+        },
+      });
+    </script>
+  </body>
+</html>
